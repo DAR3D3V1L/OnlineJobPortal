@@ -14,8 +14,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.0</version> <!-- Use the Spring Boot version here -->
-		<relativePath /> <!-- Don't change this line -->
+		<version>2.7.0</version> 
+		<relativePath />
 	</parent>
 
 	<properties>
