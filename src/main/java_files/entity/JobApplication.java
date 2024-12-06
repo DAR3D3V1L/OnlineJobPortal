@@ -2,70 +2,41 @@ package entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "job_application")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class JobApplication {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "status")
     private String status;
-    private LocalDateTime appliedDate;
+    @Column(name = "applied_date")
+    private LocalDateTime AppliedDate;
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "job_id")
     private Job job;
 
-    public JobApplication() {
-        super();
-    }
 
-    public JobApplication(int id, String status, LocalDateTime appliedDate, Employee employee, Job job) {
-        super();
-        this.id = id;
-        this.status = status;
-        this.appliedDate = appliedDate;
-        this.employee = employee;
-        this.job = job;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getAppliedDate() {
-        return appliedDate;
-    }
-
-    public void setAppliedDate(LocalDateTime appliedDate) {
-        this.appliedDate = appliedDate;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Job getJob() {
-        return job;
-    }
-
-    public void setJob(Job job) {
-        this.job = job;
-    }
-
-    @Override
-    public String toString() {
-        return "JobApplication [id=" + id + ", status=" + status + ", appliedDate=" + appliedDate + ", employee=" + employee
-                + ", job=" + job + "]";
-    }
 }

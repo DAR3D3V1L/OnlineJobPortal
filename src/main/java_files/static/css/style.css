@@ -1,0 +1,236 @@
+/* Set default navbar text color to grey */
+.navbar-nav .nav-link {
+	color: grey;
+	font-size: 1.1rem;
+	transition: color 0.3s ease;
+	/* Smooth hover transition */
+}
+
+/* Change color to #9900ff on hover */
+.navbar-nav .nav-link:hover {
+	color: #9900ff;
+}
+
+/* Active state color */
+.navbar-nav .nav-link.active {
+	color: #9900ff;
+	font-weight: bold;
+}
+
+/* Logo color */
+.navbar-brand {
+	color: #9900ff !important;
+	/* Ensure logo always uses the desired color */
+}
+
+.rounded-logo {
+	border-radius: 50%;
+	/* Makes the logo circular */
+	object-fit: cover;
+	/* Ensures the image fits inside the circle */
+}
+
+/* Highlighted text color */
+.text-highlight {
+	color: #9900ff;
+}
+
+/* Paragraph muted text color */
+.text-muted {
+	color: grey !important;
+}
+
+/* Apply hover color effect for buttons inside .ms-auto */
+.ms-auto .btn:hover {
+	background-color: #9900ff;
+	/* Set the background color on hover */
+	border-color: #9900ff;
+	/* Set border color on hover */
+	color: white;
+	/* Set the text/icon color on hover */
+}
+
+.dropdown-item {
+	color: #495057;
+	/* Dark grey text */
+}
+
+.dropdown-item:hover {
+	background-color: #007bff;
+	/* Blue background */
+	color: white;
+	/* White text */
+}
+
+/* Custom dropdown item active state */
+.dropdown-item:active {
+	background-color: #0056b3;
+	/* Darker blue */
+	color: white;
+	/* White text */
+}
+
+/* Button highlight styling */
+.btn-highlight {
+	background-color: #9900ff;
+	color: white;
+	border: none;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-highlight:hover {
+	background-color: #7a00cc;
+	/* Slightly darker shade */
+	transform: translateY(-3px);
+}
+
+.job-card:hover {
+	transform: translateY(-5px);
+	transition: all 0.3s ease-in-out;
+
+}
+
+.category-card:hover {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px);
+	transition: all 0.3s ease-in-out;
+}
+
+.row .col-md-4:hover .bg-light {
+	background-color: #f8f9fa;
+	/* Lighter background color on hover */
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	/* Optional: subtle shadow on hover */
+}
+
+/* Change text color on hover */
+.row .col-md-4:hover h5 {
+	color: #9900ff;
+	/* Change heading text color on hover */
+}
+
+/* Change text color for description on hover */
+.row .col-md-4:hover p {
+	color: #555;
+	/* Slightly darker text color */
+}
+
+/* Apply hover effect to the button */
+.row .col-md-4:hover .btn-outline-dark {
+	background-color: #9900ff;
+	/* Change background on hover */
+	border-color: #9900ff;
+	/* Change border color */
+	color: white;
+	/* Change text color */
+}
+
+/* Apply hover effect to the entire company card */
+.row .col-md-3:hover .bg-light {
+	background-color: #f8f9fa;
+	/* Lighter background color on hover */
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	/* Optional: subtle shadow on hover */
+}
+
+/* Change text color on hover */
+.row .col-md-3:hover h5 {
+	color: #9900ff;
+	/* Change heading text color on hover */
+}
+
+/* Change text color for description on hover */
+.row .col-md-3:hover p {
+	color: #555;
+	/* Slightly darker text color */
+}
+
+/* Apply hover effect to the button */
+.row .col-md-3:hover .btn-outline-dark {
+	background-color: #9900ff;
+	/* Change background on hover */
+	border-color: #9900ff;
+	/* Change border color */
+	color: white;
+	/* Change text color */
+}
+
+/* In your CSS file */
+h2 {
+	color: #9900ff;
+}
+
+/* Section styles */
+.profile-section {
+	background-color: #121212;
+	/* Dark background */
+	color: #fff;
+}
+
+.text-content h2 {
+	font-size: 2.5rem;
+	color: #fff;
+}
+
+.text-content p {
+	font-size: 1rem;
+}
+
+.text-content button {
+	padding: 0.5rem 1.5rem;
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+	border-radius: 4px;
+}
+
+/* Graphics container */
+.graphics-content {
+	position: relative;
+	width: 300px;
+	height: 400px;
+}
+
+.bg-rectangle {
+	position: absolute;
+	border-radius: 10px;
+}
+
+.bg-rectangle.blue {
+	width: 150px;
+	height: 250px;
+	background-color: #9900ff;
+	top: 0;
+	left: 50px;
+}
+
+.bg-rectangle.dark-grey {
+	width: 200px;
+	height: 300px;
+	background-color: #343a40;
+	top: 50px;
+	left: 100px;
+}
+
+.icon-container {
+	position: absolute;
+	top: 150px;
+	left: 90px;
+	width: 70px;
+	height: 70px;
+	background-color: #6c757d;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.no-link-color {
+	color: inherit;
+	text-decoration: none;
+}
+footer a {
+    text-decoration: none;
+}

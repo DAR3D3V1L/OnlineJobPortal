@@ -1,70 +1,42 @@
 package entity;
 
+
 import java.util.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "qualification")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Qualification {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "degree")
     private String degree;
+    @Column(name = "start_date")
     private Date startDate;
+    @Column(name = "end_date")
     private Date endDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
     private Employee employee;
-
-    public Qualification() {
-        super();
-    }
-
-    public Qualification(int id, String degree, Date startDate, Date endDate, Employee employee) {
-        super();
-        this.id = id;
-        this.degree = degree;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.employee = employee;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDegree() {
-        return degree;
-    }
-
-    public void setDegree(String degree) {
-        this.degree = degree;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    @Override
-    public String toString() {
-        return "Qualification [id=" + id + ", degree=" + degree + ", startDate=" + startDate + ", endDate=" + endDate + "]";
-    }
 }

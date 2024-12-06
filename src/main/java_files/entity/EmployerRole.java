@@ -1,47 +1,37 @@
 package entity;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name = "employer_roles")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmployerRole {
-	    private int id;
-	    private String name;
-	    private Employer employer;
 
-	    public EmployerRole() {
-	        super();
-	    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
-	    public EmployerRole(int id, String name, Employer employer) {
-	        super();
-	        this.id = id;
-	        this.name = name;
-	        this.employer = employer;
-	    }
+    @Column(name = "name")
+    private String name ;
 
-	    public int getId() {
-	        return id;
-	    }
-
-	    public void setId(int id) {
-	        this.id = id;
-	    }
-
-	    public String getName() {
-	        return name;
-	    }
-
-	    public void setName(String name) {
-	        this.name = name;
-	    }
-
-	    public Employer getEmployer() {
-	        return employer;
-	    }
-
-	    public void setEmployer(Employer employer) {
-	        this.employer = employer;
-	    }
-
-	    @Override
-	    public String toString() {
-	        return "EmployerRole [id=" + id + ", name=" + name + ", employer=" + employer + "]";
-	    }
-	}
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+}

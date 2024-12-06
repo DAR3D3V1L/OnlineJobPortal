@@ -1,103 +1,44 @@
 package entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "employee_profile")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmployeeProfileInfo {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "photo_path")
     private String photoPath;
+    @Column(name = "github")
     private String github;
+    @Column(name = "linkedin")
     private String linkedin;
+    @Column(name = "bio")
     private String bio;
+    @Column(name = "website")
     private String website;
+    @Column(name = "resume_path")
     private String resumePath;
+    @OneToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
-
-    public EmployeeProfileInfo() {
-        super();
-    }
-
-    public EmployeeProfileInfo(int id, String photoPath, String github, String linkedin, String bio, String website,
-                               String resumePath, Employee employee) {
-        super();
-        this.id = id;
-        this.photoPath = photoPath;
-        this.github = github;
-        this.linkedin = linkedin;
-        this.bio = bio;
-        this.website = website;
-        this.resumePath = resumePath;
-        this.employee = employee;
-    }
-
-    // Getters and Setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPhotoPath() {
-        return photoPath;
-    }
-
-    public void setPhotoPath(String photoPath) {
-        this.photoPath = photoPath;
-    }
-
-    public String getGithub() {
-        return github;
-    }
-
-    public void setGithub(String github) {
-        this.github = github;
-    }
-
-    public String getLinkedin() {
-        return linkedin;
-    }
-
-    public void setLinkedin(String linkedin) {
-        this.linkedin = linkedin;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getResumePath() {
-        return resumePath;
-    }
-
-    public void setResumePath(String resumePath) {
-        this.resumePath = resumePath;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    @Override
-    public String toString() {
-        return "EmployeeProfileInfo [id=" + id + ", photoPath=" + photoPath + ", github=" + github + ", linkedin="
-                + linkedin + ", bio=" + bio + ", website=" + website + ", resumePath=" + resumePath + ", employee="
-                + employee + "]";
-    }
 }
